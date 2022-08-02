@@ -8,6 +8,4 @@ def test_2_inputs_numbers():
 
     assert outputs[0][(4, 5)] == 2
 
-test_2_inputs_numbers()
-
 
