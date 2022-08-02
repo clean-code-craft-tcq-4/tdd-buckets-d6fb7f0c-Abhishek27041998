@@ -28,5 +28,12 @@ def test_reset_values():
     assert num == 1
 
 
+def test_many_values():
+    inputs = [3, 3, 5, 4, 10, 11]
+
+    outputs = detect_range_and_count_readings(inputs)
+
+    assert outputs[0][(3, 5)] == 4
+    assert outputs[1][(10, 12)] == 3
 
 
