@@ -29,7 +29,7 @@ def test_reset_values():
 
 
 def test_many_values():
-    inputs = [3, 3, 5, 4, 10, 11]
+    inputs = [3, 3, 5, 4, 10, 11, 12]
 
     outputs = detect_range_and_count_readings(inputs)
 

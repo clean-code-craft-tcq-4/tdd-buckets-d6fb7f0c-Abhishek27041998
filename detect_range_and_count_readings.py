@@ -19,7 +19,7 @@ def detect_range_and_count_readings(inputs: List[int]):
     start_range, end_range, num = reset_values(inputs, 0)
 
     for i in range(1, len(inputs)):
-        if inputs[i] == end_range + 1:
+        if inputs[i] == end_range + 1 or inputs[i] == end_range:
             end_range = inputs[i]
             num += 1
             continue
