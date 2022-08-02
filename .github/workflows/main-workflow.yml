@@ -27,7 +27,7 @@ jobs:
       - name: Run and collect coverage
         run: |
           coverage run --branch test_detect_range_and_count_readings.py
-          coverage run -m pytest testtest_detect_range_and_count_readings.py
+          coverage run -m pytest
           coverage html
           coverage report
       - name: Upload coverage
