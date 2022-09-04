@@ -1,4 +1,4 @@
-from detect_range_and_count_readings import detect_range_and_count_readings, reset_values
+from detect_range_and_count_readings import detect_range_and_count_readings, reset_values, check_if_inputs_valid
 
 
 def test_2_inputs_numbers():
@@ -43,3 +43,9 @@ def test_no_values():
     outputs = detect_range_and_count_readings(inputs)
 
     assert outputs == {}
+
+
+def test_check_if_inputs_valid():
+    assert check_if_inputs_valid([]) == False
+    assert check_if_inputs_valid(None) == False
+    assert check_if_inputs_valid([1,2]) == True

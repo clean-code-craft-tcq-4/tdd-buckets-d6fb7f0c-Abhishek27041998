@@ -8,12 +8,19 @@ def reset_values(inputs, index):
     return start, end, num
 
 
+def check_if_inputs_valid(inputs: List[int]):
+    if inputs is None or len(inputs) == 0:
+        return False
+
+    return True
+
+
 def detect_range_and_count_readings(inputs: List[int]):
     # Output variable to store list of ranges along with number of readings
     output: Dict[Tuple[int, int], int] = {}
 
-    # If inputs in None or Empty return {}
-    if len(inputs) == 0 or inputs is None:
+    # If inputs lenght is 0 or is empty return {}
+    if not check_if_inputs_valid(inputs):
         return output
 
     # Sort inputs
