@@ -10,7 +10,7 @@ def reset_values(inputs, index):
 
 def detect_range_and_count_readings(inputs: List[int]):
     # Output variable to store list of ranges along with number of readings
-    output: List[Dict[Tuple[int, int], int]] = []
+    output: Dict[Tuple[int, int], int] = {}
 
     # Sort inputs
     inputs.sort()
@@ -27,11 +27,11 @@ def detect_range_and_count_readings(inputs: List[int]):
             continue
         else:
             key = (start_range, end_range)
-            output.append({key: num})
+            output[key] = num
             start_range, end_range, num = reset_values(inputs, i)
 
     key = (start_range, end_range)
-    output.append({key: num})
+    output[key] = num
 
     return output
 

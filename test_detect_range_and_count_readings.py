@@ -6,7 +6,7 @@ def test_2_inputs_numbers():
 
     outputs = detect_range_and_count_readings(inputs)
 
-    assert outputs[0][(4, 5)] == 2
+    assert outputs[(4, 5)] == 2
 
 
 def test_1_input_number():
@@ -14,7 +14,7 @@ def test_1_input_number():
 
     outputs = detect_range_and_count_readings(inputs)
 
-    assert outputs[0][(1, 1)] == 1
+    assert outputs[(1, 1)] == 1
 
 
 def test_reset_values():
@@ -33,7 +33,7 @@ def test_many_values():
 
     outputs = detect_range_and_count_readings(inputs)
 
-    assert outputs[0][(3, 5)] == 4
-    assert outputs[1][(10, 12)] == 3
+    assert outputs[(3, 5)] == 4
+    assert outputs[(10, 12)] == 3
 
 
