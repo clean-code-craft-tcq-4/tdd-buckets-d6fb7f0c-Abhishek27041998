@@ -6,6 +6,8 @@ from detect_range_and_count_readings import detect_range_and_count_readings
 def a2d_convert_and_detect_range(inputs: List[int], bit: int):
     digital_values = a2d_converter(inputs, bit)
 
+    digital_values = [abs(val) for val in digital_values]
+
     ranges_count = detect_range_and_count_readings(digital_values)
 
     return ranges_count
@@ -18,7 +20,8 @@ def a2d_converter(input_arr: List[int], bit: int):
 
     for value in input_arr:
         if is_value_in_range(value, config["lower_limit_in_bit"], config["upper_limit_in_bit"]):
-            digital_value = convert_value_to_digital(value, config["upper_limit_in_bit"], config["upper_limit_amps"])
+            digital_value = convert_value_to_digital(value, config["upper_limit_in_bit"], config["upper_limit_amps"],
+                                                     config["lower_limit_in_bit"], config["lower_limit_amps"])
 
             digital_array.append(digital_value)
 
@@ -33,8 +36,8 @@ def get_relevant_config(bit: int):
     return config["Sensor"][key]
 
 
-def convert_value_to_digital(value: int, upper_limit_bits: int, upper_limit_amps: int):
-    digital_val = upper_limit_amps * (value / upper_limit_bits)
+def convert_value_to_digital(value: int, upper_limit_bits: int, upper_limit_amps: int, lower_limit_bits: int, lower_limit_amps: int):
+    digital_val = (upper_limit_amps - lower_limit_amps) * (value / (upper_limit_bits - lower_limit_bits)) + lower_limit_amps
 
     return round(digital_val)
 

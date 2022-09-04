@@ -3,9 +3,11 @@ from A2D_converter import a2d_convert_and_detect_range
 
 
 def main():
-    inputs = [0, 10, 121, 4094, 1024, 2048, 4095, 5000]
+    # inputs = [0, 10, 121, 4094, 1024, 2048, 4095, 5000]
 
-    bit = 12
+    inputs = [0, 511, 700, 1022]
+
+    bit = 10
 
     # digital_values = a2d_converter(inputs, bit)
     #

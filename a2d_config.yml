@@ -7,4 +7,9 @@ Sensor:
     upper_limit_in_bit: 4094
     upper_limit_amps: 10
 
+  10_bit:
+    lower_limit_in_bit: 0
+    lower_limit_amps: -15
+    upper_limit_in_bit: 1022
+    upper_limit_amps: 15
 
