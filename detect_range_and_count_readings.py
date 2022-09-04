@@ -12,6 +12,10 @@ def detect_range_and_count_readings(inputs: List[int]):
     # Output variable to store list of ranges along with number of readings
     output: Dict[Tuple[int, int], int] = {}
 
+    # If inputs in None or Empty return {}
+    if len(inputs) == 0 or inputs is None:
+        return output
+
     # Sort inputs
     inputs.sort()
 

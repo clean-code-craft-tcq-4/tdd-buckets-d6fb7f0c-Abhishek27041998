@@ -28,3 +28,9 @@ def test_a2d_converter_12_bit():
     assert a2d_converter([0, 4094, 4095, 2050], 12) == [0, 10, 5]
     assert a2d_converter([4096, 10000, -1, -100, 44444], 12) == []
     assert a2d_converter([1000, 1000, 1000], 12) == [2, 2, 2]
+
+
+def test_a2d_convert_and_detect_range():
+    assert a2d_convert_and_detect_range([0, 4094, 4095, 2050], 12) == {(0, 0): 1, (5, 5): 1, (10, 10): 1}
+    assert a2d_convert_and_detect_range([4096, 10000, -1, -100, 44444], 12) == {}
+    assert a2d_convert_and_detect_range([1000, 1000, 1000], 12) == {(2, 2): 3}

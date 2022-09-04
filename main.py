@@ -1,6 +1,5 @@
-from detect_range_and_count_readings import detect_range_and_count_readings
 from display_ranges import display_range
-from A2D_converter import a2d_converter
+from A2D_converter import a2d_convert_and_detect_range
 
 
 def main():
@@ -8,9 +7,11 @@ def main():
 
     bit = 12
 
-    digital_values = a2d_converter(inputs, bit)
+    # digital_values = a2d_converter(inputs, bit)
+    #
+    # result = detect_range_and_count_readings(digital_values)
 
-    result = detect_range_and_count_readings(digital_values)
+    result = a2d_convert_and_detect_range(inputs, bit)
 
     display_range(result)
 

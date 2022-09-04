@@ -1,5 +1,14 @@
 from typing import List
 from read_config import parse_config
+from detect_range_and_count_readings import detect_range_and_count_readings
+
+
+def a2d_convert_and_detect_range(inputs: List[int], bit: int):
+    digital_values = a2d_converter(inputs, bit)
+
+    ranges_count = detect_range_and_count_readings(digital_values)
+
+    return ranges_count
 
 
 def a2d_converter(input_arr: List[int], bit: int):

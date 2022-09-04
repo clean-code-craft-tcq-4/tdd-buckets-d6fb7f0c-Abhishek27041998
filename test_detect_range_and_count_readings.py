@@ -37,3 +37,9 @@ def test_many_values():
     assert outputs[(10, 12)] == 3
 
 
+def test_no_values():
+    inputs = []
+
+    outputs = detect_range_and_count_readings(inputs)
+
+    assert outputs == {}
